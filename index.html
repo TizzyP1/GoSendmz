@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GoSend v20 — Entregas em Maputo</title>
+<title>GoSend v21 — Entregas em Maputo</title>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
 
@@ -1693,6 +1693,62 @@ body.x-lock{overflow:hidden}
 #x-ppl-apps .ac,#x-ppl-inv .ac{margin-bottom:14px}
 
 .x-rt small{white-space:normal;line-height:1.4}
+
+/* ══════ v21 — MENU LATERAL ══════ */
+#gs-nav{display:none!important}
+.ap-panel{padding-bottom:56px!important}
+.x-sec{padding-bottom:56px!important}
+#toast{bottom:28px!important}
+.dock{bottom:14px!important}
+.ap-menu{display:none!important}
+.ap-top{justify-content:flex-start!important;gap:12px}
+.ap-top .ap-avatar{margin-left:auto}
+.ap-burger{position:relative;flex:none;width:44px;height:44px;border-radius:14px;display:grid;place-items:center;cursor:pointer;color:#f0f2f5;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);-webkit-tap-highlight-color:transparent;transition:transform .12s}
+.ap-burger:active{transform:scale(.93)}
+.ap-burger svg{width:22px;height:22px}
+.ap-burger.dot::after{content:'';position:absolute;top:8px;right:8px;width:9px;height:9px;border-radius:50%;background:#ff4757;border:2px solid #0a0c11}
+
+#gs-drawer{position:fixed;inset:0;z-index:800;visibility:hidden;pointer-events:none;transition:visibility 0s .38s}
+#gs-drawer.on{visibility:visible;pointer-events:auto;transition-delay:0s}
+.dr-bg{position:absolute;inset:0;background:rgba(0,0,0,.58);opacity:0;transition:opacity .32s;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}
+#gs-drawer.on .dr-bg{opacity:1}
+.dr-box{position:absolute;left:0;top:0;bottom:0;width:min(86vw,350px);display:flex;flex-direction:column;
+  background:linear-gradient(180deg,#12151c 0%,#0a0c11 100%);border-right:1px solid rgba(255,255,255,.09);
+  box-shadow:30px 0 80px rgba(0,0,0,.65);transform:translateX(-104%);transition:transform .4s cubic-bezier(.22,1,.36,1);
+  padding-top:env(safe-area-inset-top)}
+#gs-drawer.on .dr-box{transform:none}
+.dr-head{display:flex;align-items:center;gap:13px;padding:20px 18px 18px;border-bottom:1px solid rgba(255,255,255,.07)}
+.dr-head .ap-mark{width:48px;height:48px;border-radius:15px}
+.dr-ht b{display:block;font-size:20px;font-weight:900;letter-spacing:-.6px;color:#f0f2f5;line-height:1.1}
+.dr-ht small{display:block;font-size:13px;color:rgba(240,242,245,.5);margin-top:3px}
+.dr-x{margin-left:auto;flex:none;width:42px;height:42px;border-radius:13px;display:grid;place-items:center;cursor:pointer;color:rgba(240,242,245,.7);
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08)}
+.dr-x svg{width:20px;height:20px}
+.dr-nav{flex:1;overflow-y:auto;padding:6px 12px 16px}
+.dr-g{font-size:11.5px;font-weight:800;letter-spacing:1.1px;text-transform:uppercase;color:rgba(240,242,245,.36);margin:20px 12px 8px}
+.x-di{display:flex;align-items:center;gap:15px;width:100%;height:54px;padding:0 14px;margin-bottom:2px;border:none;border-radius:15px;background:none;cursor:pointer;
+  font:600 16.5px 'Figtree',sans-serif;color:rgba(240,242,245,.78);text-align:left;-webkit-tap-highlight-color:transparent;transition:background .2s,color .2s}
+.x-di:active{background:rgba(255,255,255,.06)}
+.x-di.on{background:rgba(255,193,7,.12);color:#FFC107}
+.x-di-i{flex:none;display:grid;place-items:center}
+.x-di-i svg{width:23px;height:23px}
+.x-di-l{flex:1}
+.x-dmeta{margin-left:auto;font-size:13.5px;font-weight:700;color:rgba(240,242,245,.42)}
+.x-di.on .x-dmeta{color:rgba(255,193,7,.75)}
+.x-dbadge{display:inline-grid;place-items:center;min-width:24px;height:24px;padding:0 8px;border-radius:12px;background:#ff4757;color:#fff;font-size:12.5px;font-weight:900}
+.dr-foot{padding:14px 14px calc(16px + env(safe-area-inset-bottom));border-top:1px solid rgba(255,255,255,.07);display:flex;flex-direction:column;gap:10px}
+.dr-user{display:flex;align-items:center;gap:13px;width:100%;padding:11px;border-radius:18px;cursor:pointer;text-align:left;font-family:inherit;color:inherit;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07)}
+.dr-av{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:15px;color:#0a0800;background:linear-gradient(135deg,#FFC107,#FF8F00)}
+.dr-ut{min-width:0}
+.dr-ut b{display:block;font-size:15px;font-weight:800;color:#f0f2f5;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dr-ut small{display:block;font-size:12.5px;color:rgba(240,242,245,.48);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dr-out{display:flex;align-items:center;justify-content:center;gap:9px;height:46px;border-radius:14px;cursor:pointer;font:700 14px 'Figtree',sans-serif;
+  color:#ff6b78;background:rgba(255,71,87,.08);border:1px solid rgba(255,71,87,.22)}
+.dr-out svg{width:18px;height:18px}
+@media (prefers-reduced-motion:reduce){.dr-box,.dr-bg{transition:none}}
+
 /* SUGGESTION DROPDOWN */
 .sugg-box{background:#111318;border:1px solid rgba(255,193,7,0.2);border-radius:0 0 12px 12px;margin-top:-8px;max-height:180px;overflow-y:auto;z-index:999;position:relative;}
 .sugg-item{padding:11px 14px;font-size:13px;color:rgba(240,242,245,0.8);border-bottom:1px solid rgba(255,255,255,0.05);cursor:pointer;display:flex;align-items:center;gap:8px;}
@@ -4100,7 +4156,7 @@ function profileView(role){
    +'<div class="x-h2">Ajuda</div>'
    +'<button class="x-row" onclick="GSApp.support()"><span class="x-ri b">'+I.help+'</span><div class="x-rt"><b>Falar com o suporte</b><small>Dúvidas, problemas ou sugestões</small></div><span class="x-chev">'+I.chev+'</span></button>'
    +'<button class="x-btn danger" style="margin-top:18px" onclick="authLogout()">'+I.logout+'Terminar sessão</button>'
-   +'<div class="x-ver">GoSend v20 · Maputo</div>';
+   +'<div class="x-ver">GoSend v21 · Maputo</div>';
 }
 V['cliente.profile']=()=>head('A sua conta','O seu<br>perfil')+profileView('cliente');
 V['entregador.profile']=()=>head('A sua conta','O seu<br>perfil')+profileView('entregador');
@@ -4209,11 +4265,11 @@ V['admin.settings']=function(){
    +'<div class="x-row"><span class="x-ri y">'+I.moto+'</span><div class="x-rt"><b>Entregadores simulados</b><small>Aceitam pedidos sozinhos ao fim de segundos. Desligue para testar com contas reais de entregador.</small></div><button class="x-sw '+(c.autoSim?'on':'')+'" onclick="GSApp.toggleSim()" aria-label="Entregadores simulados"></button></div>'
    +'<div class="x-danger-zone"><b>Repor dados de demonstração</b><p>Apaga pedidos, carteiras e saques deste dispositivo. As contas registadas mantêm-se.</p><button class="x-btn danger" onclick="GSApp.confirmReset()">Repor dados</button></div>'
    +'<button class="x-btn ghost" style="margin-top:14px" onclick="authLogout()">'+I.logout+'Terminar sessão</button>'
-   +'<div class="x-ver">GoSend v20 · Maputo</div>';
+   +'<div class="x-ver">GoSend v21 · Maputo</div>';
 };
 
 /* ───────────── 5. ACÇÕES (GSApp) ───────────── */
-const GSApp=window.GSApp={ go:k=>go(k), closeSheet, store:{get db(){return DB;},wallet:acct,profile,topup,withdraw,resolveWithdrawal,reconcile,avgRating,onChange},
+const GSApp=window.GSApp={ go:k=>go(k), closeSheet, openDrawer:()=>openDrawer(), closeDrawer:()=>closeDrawer(), store:{get db(){return DB;},wallet:acct,profile,topup,withdraw,resolveWithdrawal,reconcile,avgRating,onChange},
   set(k,v){UI[k]=v;render();} };
 
 GSApp.toggleNotif=function(k){const pf=profile(S().email);pf.notif[k]=!pf.notif[k];save(true);render();};
@@ -4335,9 +4391,9 @@ function syncPay(){
 
 /* ───────────── 6. ROUTER ───────────── */
 const TABS={
-  cliente:[{k:'home',l:'Início',i:'home',panel:'panel-c'},{k:'orders',l:'Pedidos',i:'list'},{k:'wallet',l:'Carteira',i:'wallet'},{k:'profile',l:'Perfil',i:'user'}],
-  entregador:[{k:'home',l:'Início',i:'home',panel:'panel-e'},{k:'orders',l:'Entregas',i:'list'},{k:'wallet',l:'Carteira',i:'wallet'},{k:'profile',l:'Perfil',i:'user'}],
-  admin:[{k:'home',l:'Painel',i:'chart',panel:'panel-a'},{k:'orders',l:'Pedidos',i:'list'},{k:'people',l:'Pessoas',i:'users'},{k:'fin',l:'Finanças',i:'wallet'},{k:'settings',l:'Definições',i:'sliders'}]
+  cliente:[{k:'home',l:'Início',i:'home',panel:'panel-c',g:'Principal'},{k:'orders',l:'Pedidos',i:'list',g:'Principal'},{k:'wallet',l:'Carteira',i:'wallet',g:'Finanças'},{k:'profile',l:'Perfil',i:'user',g:'Conta'}],
+  entregador:[{k:'home',l:'Início',i:'home',panel:'panel-e',g:'Principal'},{k:'orders',l:'Entregas',i:'list',g:'Principal'},{k:'wallet',l:'Carteira',i:'wallet',g:'Finanças'},{k:'profile',l:'Perfil',i:'user',g:'Conta'}],
+  admin:[{k:'home',l:'Painel',i:'chart',panel:'panel-a',g:'Dashboard'},{k:'orders',l:'Pedidos',i:'list',g:'Operação'},{k:'people',l:'Pessoas',i:'users',g:'Operação'},{k:'fin',l:'Finanças',i:'wallet',g:'Finanças'},{k:'settings',l:'Definições',i:'sliders',g:'Sistema'}]
 };
 let CUR={role:null,tab:'home'},LAST='';
 function secEl(role,k){
@@ -4346,12 +4402,37 @@ function secEl(role,k){
   return el;
 }
 function mountNav(role){
-  let nav=$('gs-nav');
-  if(!nav){nav=document.createElement('nav');nav.id='gs-nav';$('view-app').appendChild(nav);}
-  nav.innerHTML='<div class="x-nav-in">'+TABS[role].map(t=>'<button class="x-nb" data-k="'+t.k+'" onclick="GSApp.go(\''+t.k+'\')">'+I[t.i]+'<span>'+t.l+'</span></button>').join('')+'</div>';
-  nav.classList.add('on');CUR.role=role;
+  let dr=$('gs-drawer');
+  if(!dr){dr=document.createElement('div');dr.id='gs-drawer';document.body.appendChild(dr);}
+  const label={cliente:'Painel do cliente',entregador:'Painel do entregador',admin:'Painel do administrador'}[role];
+  let last='',items='';
+  TABS[role].forEach(t=>{
+    if(t.g!==last){items+='<div class="dr-g">'+t.g+'</div>';last=t.g;}
+    items+='<button class="x-di" data-k="'+t.k+'" onclick="GSApp.go(\''+t.k+'\')"><span class="x-di-i">'+I[t.i]+'</span><span class="x-di-l">'+t.l+'</span><span class="x-dmeta"></span></button>';
+  });
+  if(role!=='admin') items+='<div class="dr-g">Ajuda</div><button class="x-di" onclick="GSApp.closeDrawer();GSApp.support()"><span class="x-di-i">'+I.help+'</span><span class="x-di-l">Falar com o suporte</span><span class="x-dmeta"></span></button>';
+  dr.innerHTML='<div class="dr-bg" onclick="GSApp.closeDrawer()"></div><aside class="dr-box" aria-label="Menu">'
+    +'<div class="dr-head"><span class="ap-mark"></span><div class="dr-ht"><b>GoSend</b><small>'+label+'</small></div><button class="dr-x" onclick="GSApp.closeDrawer()" aria-label="Fechar menu">'+I.x+'</button></div>'
+    +'<nav class="dr-nav">'+items+'</nav>'
+    +'<div class="dr-foot"><button class="dr-user" onclick="GSApp.go(\''+(role==='admin'?'settings':'profile')+'\')"><span class="dr-av" id="dr-av">?</span><div class="dr-ut"><b id="dr-name"></b><small id="dr-mail"></small></div></button>'
+    +'<button class="dr-out" onclick="authLogout()">'+I.logout+'Terminar sessão</button></div></aside>';
+  const top=document.querySelector('#view-app .ap-top');
+  if(top&&!top.querySelector('.ap-burger')){
+    const b=document.createElement('button');b.className='ap-burger';b.setAttribute('aria-label','Abrir menu');
+    b.innerHTML=ico('<path d="M4 7h16M4 12h16M4 17h10"/>');b.onclick=openDrawer;top.insertBefore(b,top.firstChild);
+  }
+  const av=$('ap-avatar');if(av)av.onclick=function(){go(role==='admin'?'settings':'profile');};
+  CUR.role=role;
 }
-function unmountNav(){const nav=$('gs-nav');if(nav){nav.classList.remove('on');nav.innerHTML='';}CUR.role=null;document.body.classList.remove('x-lock');closeSheet();}
+function openDrawer(){const d=$('gs-drawer');if(!d)return;updateBadges();d.classList.add('on');document.body.classList.add('x-lock');}
+function closeDrawer(){const d=$('gs-drawer');if(d)d.classList.remove('on');const sh=$('gs-sheet');if(!sh||!sh.classList.contains('on'))document.body.classList.remove('x-lock');}
+function markDrawer(k){document.querySelectorAll('#gs-drawer .x-di[data-k]').forEach(b=>b.classList.toggle('on',b.dataset.k===k));}
+function unmountNav(){const d=$('gs-drawer');if(d){d.classList.remove('on');d.innerHTML='';}CUR.role=null;document.body.classList.remove('x-lock');closeSheet();}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+(function(){let sx=null,sy=null;
+  document.addEventListener('touchstart',e=>{if(e.target.closest&&e.target.closest('.dr-box')){sx=e.touches[0].clientX;sy=e.touches[0].clientY;}else sx=null;},{passive:true});
+  document.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx,dy=Math.abs(e.changedTouches[0].clientY-sy);if(dx<-60&&dy<50)closeDrawer();sx=null;},{passive:true});
+})();
 function go(k){
   const role=CUR.role;if(!role)return;
   const t=TABS[role].find(x=>x.k===k)||TABS[role][0];CUR.tab=t.k;
@@ -4359,7 +4440,7 @@ function go(k){
   document.querySelectorAll('#view-app .x-sec').forEach(p=>p.classList.remove('on'));
   if(t.panel){$(t.panel).classList.add('on');}
   else{const el=secEl(role,t.k);el.classList.add('on');renderTab(true);}
-  document.querySelectorAll('#gs-nav .x-nb').forEach(b=>b.classList.toggle('on',b.dataset.k===t.k));
+  markDrawer(t.k);closeDrawer();
   try{sessionStorage.setItem('gs_tab_'+role,t.k);}catch(e){}
   window.scrollTo(0,0);
 }
@@ -4379,10 +4460,18 @@ function sig(){
   return [GS.pedidos.map(p=>p.id+p.status+(p.rating||'')+(p.entregador||'')).join(','),(DB.users[s.email]||{}).saldo,DB.withdrawals.map(w=>w.id+w.estado).join(','),(AUTH.entregadores||[]).map(x=>x.email+x.status).join(','),(AUTH.clientes||[]).length].join('|');
 }
 function updateBadges(){
-  if(CUR.role!=='admin')return;
-  const apps=(AUTH.entregadores||[]).filter(e=>e.status==='pending').length,w=DB.withdrawals.filter(x=>x.estado==='pendente').length;
-  const set=(k,n)=>{const b=document.querySelector('#gs-nav .x-nb[data-k="'+k+'"]');if(!b)return;let d=b.querySelector('.x-dot');if(n){if(!d){d=document.createElement('span');d.className='x-dot';b.appendChild(d);}d.textContent=n;}else if(d)d.remove();};
-  set('people',apps);set('fin',w);
+  const role=CUR.role;if(!role)return;const s=S();if(!s)return;
+  const a=acct(s.email),apps=(AUTH.entregadores||[]).filter(e=>e.status==='pending').length,w=DB.withdrawals.filter(x=>x.estado==='pendente').length;
+  const counts={},meta={};
+  if(role==='admin'){counts.people=apps;counts.fin=w;counts.orders=GS.pedidos.filter(p=>p.status==='aguardando').length;}
+  if(role==='cliente')counts.orders=GS.pedidos.filter(p=>p.cliente===s.email&&ACTIVE(p.status)).length;
+  if(role==='entregador')counts.orders=GS.pedidos.filter(p=>p.entregadorEmail===s.email&&ACTIVE(p.status)).length;
+  if(role!=='admin')meta.wallet=money(a.saldo);
+  document.querySelectorAll('#gs-drawer .x-di[data-k]').forEach(b=>{
+    const k=b.dataset.k,m=b.querySelector('.x-dmeta');if(!m)return;
+    if(counts[k])m.innerHTML='<span class="x-dbadge">'+counts[k]+'</span>';else m.textContent=meta[k]||'';
+  });
+  const bur=document.querySelector('.ap-burger');if(bur)bur.classList.toggle('dot',role==='admin'&&(apps+w)>0);
   const al=$('x-adm-alerts');
   if(al)al.innerHTML=(apps?'<button class="x-row tap" onclick="GSApp.go(\'people\')"><span class="x-ri y">'+I.users+'</span><div class="x-rt"><b>'+apps+' candidatura'+(apps>1?'s':'')+' por aprovar</b><small>Entregadores à espera da sua decisão</small></div><span class="x-chev">'+I.chev+'</span></button>':'')
    +(w?'<button class="x-row tap" onclick="GSApp.go(\'fin\')"><span class="x-ri y">'+I.bank+'</span><div class="x-rt"><b>'+w+' saque'+(w>1?'s':'')+' por aprovar</b><small>Entregadores à espera de pagamento</small></div><span class="x-chev">'+I.chev+'</span></button>':'');
@@ -4433,7 +4522,7 @@ function syncDriverHome(){
 function refreshIdentity(){
   const s=S()||{},n=s.nome||'',f=n.split(' ')[0]||'';
   const set=(id,v)=>{const e=$(id);if(e)e.textContent=v;};
-  set('ap-avatar',initials(n));set('am-av',initials(n));set('am-name',n);set('am-mail',s.email||'');set('cl-name',f);
+  set('ap-avatar',initials(n));set('dr-av',initials(n));set('dr-name',n);set('dr-mail',s.email||'');set('am-av',initials(n));set('am-name',n);set('am-mail',s.email||'');set('cl-name',f);
   document.querySelectorAll('.ph-name').forEach(e=>e.textContent=f);
 }
 
